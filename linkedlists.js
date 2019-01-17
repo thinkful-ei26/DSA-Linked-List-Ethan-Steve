@@ -125,13 +125,11 @@ function main() {
   SLL.insertLast('Helo')
   SLL.insertLast('Husker')
   SLL.insertLast('Starbuck')
-
   SLL.insertFirst('Tauhida')
-
-  // SLL.remove('squirrel')
   SLL.insertBefore('Athena', 'Boomer')
   SLL.insertAfter('Hotdog', 'Helo')
   SLL.insertAt('STEVE + ETHAN', 3)
+  SLL.remove('Tauhida')
   display(SLL)
 }
 
