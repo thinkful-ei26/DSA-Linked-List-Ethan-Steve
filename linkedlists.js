@@ -182,7 +182,7 @@ function main() {
   SLL.insertFirst('Tauhida')
   SLL.insertBefore('Athena', 'Boomer')
   SLL.insertAfter('Hotdog', 'Helo')
-  SLL.insertAt('STEVE + ETHAN', 3)
+  SLL.insertAt('Banana', 3)
   SLL.remove('Tauhida')
   display(SLL)
   // console.log(size(SLL))
