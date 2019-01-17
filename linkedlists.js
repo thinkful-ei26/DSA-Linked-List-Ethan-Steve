@@ -118,6 +118,21 @@ function display(LinkedList) {
     currNode = currNode.next
   }
 }
+function size(LinkedList) {
+  let currNode = LinkedList.head
+  let counter = 1
+  while (currNode.next) {
+    counter++
+    currNode = currNode.next
+  }
+  return counter
+}
+
+function isEmpty(LinkedList) {
+  if (LinkedList.head) {
+    return false
+  } else return true
+}
 function main() {
   let SLL = new LinkedList()
   SLL.insertFirst('Apollo')
@@ -131,6 +146,8 @@ function main() {
   SLL.insertAt('STEVE + ETHAN', 3)
   SLL.remove('Tauhida')
   display(SLL)
+  console.log(size(SLL))
+  console.log(isEmpty(SLL))
 }
 
 main()
