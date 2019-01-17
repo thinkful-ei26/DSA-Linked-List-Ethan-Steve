@@ -68,6 +68,7 @@ class LinkedList {
     }
     previousNode.next = currNode.next
   }
+
   insertBefore(item, itemTofind) {
     let currNode = this.head
     let nextNode = currNode.next
@@ -79,9 +80,9 @@ class LinkedList {
         nextNode = nextNode.next
       }
     }
-
     currNode.next = new _Node(item, nextNode)
   }
+  
   insertAfter(item, itemTofind) {
     let currNode = this.head
     while (currNode.value !== itemTofind) {
@@ -94,6 +95,7 @@ class LinkedList {
     let tempNode = currNode.next
     currNode.next = new _Node(item, tempNode)
   }
+  
   insertAt(item, index) {
     let currNode = this.head
     let counter = 1
@@ -111,6 +113,7 @@ class LinkedList {
   }
 }
 
+
 function display(LinkedList) {
   let currNode = LinkedList.head
   while (currNode) {
@@ -118,6 +121,7 @@ function display(LinkedList) {
     currNode = currNode.next
   }
 }
+
 function size(LinkedList) {
   let currNode = LinkedList.head
   let counter = 1
@@ -133,6 +137,33 @@ function isEmpty(LinkedList) {
     return false
   } else return true
 }
+
+function findPrevious(LinkedList, item){
+  let currNode = LinkedList.head;
+  let previousNode;
+
+  while(currNode.value !== item.value){
+    previousNode = currNode;
+    if(currNode.next) {
+    currNode = currNode.next;
+    } else return 'Item not found';
+  }
+  if(!previousNode){
+    return 'No Previous Item';
+  }
+  return previousNode;
+}
+
+function findLast (LinkedList){
+  let currNode = LinkedList.head;
+  let previousNode;
+  while(currNode){
+    previousNode = currNode;
+    currNode = currNode.next
+  }
+  return previousNode;
+}
+
 function main() {
   let SLL = new LinkedList()
   SLL.insertFirst('Apollo')
@@ -146,8 +177,10 @@ function main() {
   SLL.insertAt('STEVE + ETHAN', 3)
   SLL.remove('Tauhida')
   display(SLL)
-  console.log(size(SLL))
-  console.log(isEmpty(SLL))
+  // console.log(size(SLL))
+  // console.log(isEmpty(SLL))
+  // console.log(findPrevious(SLL, {value: 'foo'}))
+  console.log(findLast(SLL));
 }
 
 main()
