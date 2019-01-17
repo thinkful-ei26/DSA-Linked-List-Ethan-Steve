@@ -79,7 +79,7 @@ class LinkedList {
         nextNode = nextNode.next
       }
     }
-    console.log(nextNode)
+
     currNode.next = new _Node(item, nextNode)
   }
   insertAfter(item, itemTofind) {
@@ -96,9 +96,9 @@ class LinkedList {
   }
   insertAt(item, index) {
     let currNode = this.head
-    let counter = 0
+    let counter = 1
 
-    while (counter < index) {
+    while (counter < index - 1) {
       if (currNode.next === null) {
         return null
       } else {
