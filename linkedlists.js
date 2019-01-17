@@ -174,6 +174,41 @@ function findLast(LinkedList) {
   return previousNode
 }
 
+function third(LinkedList) {
+  let currNode = LinkedList.head
+  let counter = 0
+  let i = 0
+  while (currNode) {
+    counter++
+    currNode = currNode.next
+  }
+  currNode = LinkedList.head
+  let index = counter - 3
+  console.log(counter)
+
+  while (i < index) {
+    currNode = currNode.next
+    i++
+  }
+  return currNode.value
+}
+
+function cycle(LinkedList) {
+  let slow, fast
+  if (!LinkedList.head || !LinkedList.head.next) return false
+  slow = LinkedList.head
+  fast = LinkedList.head
+  if (LinkedList.head === LinkedList.head.next) {
+    return true
+  }
+  while (fast.next.next) {
+    slow = slow.next
+    fast = fast.next.next
+    if (slow === fast) return true
+  }
+  return false
+}
+
 function main() {
   let SLL = new LinkedList()
   SLL.insertFirst('Apollo')
@@ -191,8 +226,11 @@ function main() {
   // console.log(isEmpty(SLL))
   // console.log(findPrevious(SLL, {value: 'foo'}))
   // console.log(findLast(SLL))
-  console.log('\n\nREVERSING LIST\n\n')
-  display(reverse(SLL))
+  // console.log('\n\nREVERSING LIST\n\n')
+  // display(reverse(SLL))
+  // console.log(third(SLL))
+
+  console.log(cycle(SLL))
 }
 
 main()
