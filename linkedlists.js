@@ -139,13 +139,15 @@ function isEmpty(LinkedList) {
 
 function reverse(SLL) {
   let currNode = SLL.head
+  SLL.head = null
   while (currNode) {
-    SLL.insertFirst(currNode)
+    SLL.insertFirst(currNode.value)
     currNode = currNode.next
   }
 
   return SLL
 }
+
 function findPrevious(LinkedList, item) {
   let currNode = LinkedList.head
   let previousNode
@@ -189,7 +191,7 @@ function main() {
   // console.log(isEmpty(SLL))
   // console.log(findPrevious(SLL, {value: 'foo'}))
   // console.log(findLast(SLL))
-
+  console.log('\n\nREVERSING LIST\n\n')
   display(reverse(SLL))
 }
 
