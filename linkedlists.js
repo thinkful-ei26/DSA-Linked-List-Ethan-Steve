@@ -133,6 +133,8 @@ function isEmpty(LinkedList) {
     return false
   } else return true
 }
+
+function reverse() {}
 function main() {
   let SLL = new LinkedList()
   SLL.insertFirst('Apollo')
